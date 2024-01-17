@@ -1,12 +1,12 @@
 {
-  "name": "aula01-tdd",
+  "name": "aula02-bdd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-   "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --injectGlobals false --runInBand test/",
-    "dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --injectGlobals false --runInBand --watchAll test/",
-    "test:debug": "node --experimental-vm-modules --inspect-brk node_modules/.bin/jest --injectGlobals false --runInBand --watchAll test/"
+    "test": "npx cucumber-js",
+    "test:dev": "node --watch node_modules/.bin/cucumber-js --fail-fast --format progress --format html:cucumber_report.html",
+    "test:debug": "node --watch --inspect-brk node_modules/.bin/cucumber-js --fail-fast --format progress --format html:cucumber_report.html"
   },
   "keywords": [],
   "author": "leonardojaques",
@@ -16,6 +16,7 @@
     "node": "v20.11.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@cucumber/cucumber": "^10.0.1",
+    "sinon": "^17.0.1"
   }
 }
